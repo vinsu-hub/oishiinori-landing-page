@@ -11,6 +11,10 @@
 - [x] Connect Checkout and relevant visit CTAs to the reservation section.
 - [x] Verify reservation form feedback and responsive behavior, then save an updated checkpoint.
 
+- [x] Diagnose the reservation form contrast and native select styling.
+- [x] Apply readable control text, placeholder, option, focus, and autofill colors.
+- [x] Verify the corrected reservation form on desktop and mobile, then save a checkpoint.
+
 ## Verification notes
 
 Desktop full-page capture shows the intended long-scroll poster composition, readable contrast, and coherent section transitions. Mobile full-page capture shows the two-column menu compressing cleanly, the hero and contact sections stacking, and the footer remaining legible. Generated food images are rendering through the reserved webdev asset URLs.
@@ -20,3 +24,5 @@ Browser interaction check: the preview loads with semantic buttons, tabs, form l
 Reservation update verification: the new vermilion booking band appears between the visit and contact sections, with date, time, party size, guest name, and phone/email controls. The mobile capture shows the form stacking cleanly and the reservation CTA remains legible. Type-check and production build both pass.
 
 Final browser check: the header Reserve CTA scrolls to the reservation band, which exposes the expected date, time, party size, name, and contact controls. The live page also confirms the OIshiinori hero lockup and revised footer helper copy.
+
+Contrast-fix verification: desktop and mobile captures now show bright labels, placeholders, values, and underlines against the vermilion reservation band. Native select controls are forced into a light color scheme with dark readable options, while focus states add a clear dark rule and translucent highlight.
