@@ -74,13 +74,14 @@ export default function Home() {
 
       <section id="home" className="hero section-pad">
         <div className="hero-copy">
+          <div className="mobile-hero-mark"><img src={logo} alt="" /><span>OIshiinori<br /><small>JAPANESE SUSHI</small></span></div>
           <p className="eyebrow">EXCLUSIVE ROLLS<br /><span>FOR YOUR OISHII DAY</span></p>
           <h1>OIshii<br /><em>Nori</em></h1>
           <p className="hero-japanese">おいしいのり</p>
           <p className="hero-description">Rolls with a little more feeling.<br />Fresh ingredients, bright ideas,<br />and a table waiting for you.</p>
           <div className="hero-actions">
-            <button className="dark-button" onClick={() => scrollToId("menu")}>Get in touch <ArrowRight size={13} /></button>
-            <button className="text-button" onClick={() => scrollToId("menu")}>Popular</button>
+            <button className="dark-button mobile-primary" onClick={() => scrollToId("reserve")}>Reserve a table <ArrowRight size={13} /></button>
+            <button className="text-button mobile-secondary" onClick={() => scrollToId("menu")}>View menu <ArrowRight size={13} /></button>
           </div>
         </div>
         <div className="hero-visual">
@@ -89,6 +90,13 @@ export default function Home() {
           <div className="vertical-stamp">寿司<br /><small>good food, good mood</small></div>
         </div>
         <div className="hero-note">JAPANESE<br />FOOD STUDIO <span>✳</span></div>
+      </section>
+
+      <section className="mobile-features" aria-label="Why choose OIshiinori">
+        <div><span>♥</span><b>Fresh daily</b><small>新鮮な毎日</small></div>
+        <div><span>●</span><b>Handcrafted</b><small>心を込めて</small></div>
+        <div><span>鳥</span><b>Japanese inspired</b><small>日本のインスピレーション</small></div>
+        <div><span>★</span><b>Local favorite</b><small>地元で愛されるお店</small></div>
       </section>
 
       <section id="menu" className="menu-section section-pad">

@@ -24,6 +24,11 @@
 - [x] Add clean scroll, reveal, hover, and reduced-motion-safe animation.
 - [x] Evaluate desktop and mobile UI states and save an updated checkpoint.
 
+- [x] Rework the mobile header, hero, CTA hierarchy, and feature strip based on the supplied reference.
+- [x] Add mobile signature cards, experience panel, and condensed reservation treatment.
+- [x] Preserve desktop layout and existing map, hours, menu, and form interactions.
+- [x] Evaluate mobile and desktop screenshots, then save an updated checkpoint.
+
 ## Verification notes
 
 Desktop full-page capture shows the intended long-scroll poster composition, readable contrast, and coherent section transitions. Mobile full-page capture shows the two-column menu compressing cleanly, the hero and contact sections stacking, and the footer remaining legible. Generated food images are rendering through the reserved webdev asset URLs.
@@ -41,3 +46,13 @@ Dual-viewport evaluation: desktop preserves the editorial poster rhythm while ad
 Map interaction diagnostic: the live preview exposes the Visit Us button and the confirmed daily hours/address. The first browser click did not visibly update the button state, so the DOM click path was tested directly; a follow-up render check is needed before final delivery.
 
 Map-open interaction check: clicking Visit Us changes the action to Hide Map and renders the built-in Google Maps view centered on Oishii Nori at the supplied Laguna coordinates, with an Open in Maps link. Desktop and mobile closed-state captures plus the open desktop map state were reviewed for hierarchy, spacing, and readability.
+
+## Rollback verification
+
+- [x] Roll back to the pre-ramen-hero checkpoint while preserving the prior site features.
+- [x] Verify the original OIshiinori hero is restored and reservation, hours, map, and contrast fixes remain.
+- [x] Save and deliver the reverted project version.
+
+The correct rollback removed only the ramen opening hero. The OIshiinori cream-paper hero is restored; the MapView, daily hours, reservation section, and reservation contrast fix remain. Type-check passes.
+
+Mobile redesign evaluation: the phone layout now has a charcoal pill navigation with a centered logo medallion, stronger Reserve/View Menu hierarchy, a four-column feature strip, tighter signature menu cards, a dark experience section, and a light paper reservation form with a stamped label. Desktop capture confirms the existing editorial layout remains intact.
