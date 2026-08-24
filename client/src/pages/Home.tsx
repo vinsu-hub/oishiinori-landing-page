@@ -11,12 +11,12 @@ const snacksImage = "/manus-storage/oishiinori-snacks_9a060d6c.png";
 const categories = ["All", "Sushi", "Tako", "Ramen", "Cafe"];
 
 const menuItems = [
-  { name: "Salmon Maki", category: "Sushi", description: "Fresh salmon, seasoned rice, nori", price: "₱180", image: heroImage, tag: "01" },
-  { name: "Spicy Tuna Roll", category: "Sushi", description: "Tuna, house spicy mayo, spring onion", price: "₱210", image: heroImage, tag: "02" },
-  { name: "California Roll", category: "Sushi", description: "Crabstick, avocado, cucumber, sesame", price: "₱195", image: heroImage, tag: "03" },
-  { name: "Tako Bites", category: "Tako", description: "Crispy octo bits, bonito, Oishii sauce", price: "₱145", image: snacksImage, tag: "04" },
-  { name: "Tonkatsu Ramen", category: "Ramen", description: "Rich base, noodles, pork cutlet, nori", price: "₱285", image: ramenImage, tag: "05" },
-  { name: "Matcha Cream", category: "Cafe", description: "Matcha, full cream, soft mousse", price: "₱160", image: drinksImage, tag: "06" },
+  { name: "Salmon Maki", category: "Sushi", description: "Fresh salmon, seasoned rice, nori", price: "₱180", image: heroImage, crop: "center", tag: "01" },
+  { name: "Spicy Tuna Roll", category: "Sushi", description: "Tuna, house spicy mayo, spring onion", price: "₱210", image: heroImage, crop: "left center", tag: "02" },
+  { name: "California Roll", category: "Sushi", description: "Crabstick, avocado, cucumber, sesame", price: "₱195", image: heroImage, crop: "right center", tag: "03" },
+  { name: "Tako Bites", category: "Tako", description: "Crispy octo bits, bonito, Oishii sauce", price: "₱145", image: snacksImage, crop: "center", tag: "04" },
+  { name: "Tonkatsu Ramen", category: "Ramen", description: "Rich base, noodles, pork cutlet, nori", price: "₱285", image: ramenImage, crop: "center", tag: "05" },
+  { name: "Matcha Cream", category: "Cafe", description: "Matcha, full cream, soft mousse", price: "₱160", image: drinksImage, crop: "center", tag: "06" },
 ];
 
 function scrollToId(id: string) {
@@ -27,6 +27,7 @@ export default function Home() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
+  const [reservationSent, setReservationSent] = useState(false);
   const [email, setEmail] = useState("");
 
   const filteredItems = useMemo(
@@ -37,6 +38,11 @@ export default function Home() {
   const handleContact = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSent(true);
+  };
+
+  const handleReservation = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setReservationSent(true);
   };
 
   return (
@@ -58,7 +64,7 @@ export default function Home() {
           <nav className="nav-links nav-links-right">
             <button onClick={() => scrollToId("menu")}>Menu</button>
             <button onClick={() => scrollToId("about")}>Branches</button>
-            <button className="nav-cta" onClick={() => scrollToId("contact")}>Checkout <ArrowRight size={12} /></button>
+            <button className="nav-cta" onClick={() => scrollToId("reserve")}>Reserve <ArrowRight size={12} /></button>
           </nav>
         </div>
       </header>
@@ -66,7 +72,7 @@ export default function Home() {
       <section id="home" className="hero section-pad">
         <div className="hero-copy">
           <p className="eyebrow">EXCLUSIVE ROLLS<br /><span>FOR YOUR OISHII DAY</span></p>
-          <h1>Oishii<br /><em>Nori</em></h1>
+          <h1>OIshii<br /><em>Nori</em></h1>
           <p className="hero-japanese">おいしいのり</p>
           <p className="hero-description">Rolls with a little more feeling.<br />Fresh ingredients, bright ideas,<br />and a table waiting for you.</p>
           <div className="hero-actions">
@@ -101,7 +107,7 @@ export default function Home() {
           {filteredItems.map((item) => (
             <article className="menu-card" key={item.name}>
               <div className="menu-image-wrap">
-                <img src={item.image} alt={item.name} />
+                <img src={item.image} alt={item.name} style={{ objectPosition: item.crop }} />
                 <span className="menu-number">{item.tag}</span>
               </div>
               <div className="menu-card-copy">
@@ -136,15 +142,32 @@ export default function Home() {
 
       <section className="visit-section section-pad">
         <div className="visit-actions">
-          <button className="visit-pill" onClick={() => scrollToId("contact")}><Clock3 /><span><b>Timing</b><small>Check our hours</small></span><ArrowRight /></button>
-          <button className="visit-pill" onClick={() => scrollToId("contact")}><MapPin /><span><b>Visit us</b><small>Find your next bite</small></span><ArrowRight /></button>
+          <button className="visit-pill" onClick={() => scrollToId("reserve")}><Clock3 /><span><b>Timing</b><small>Check our hours</small></span><ArrowRight /></button>
+          <button className="visit-pill" onClick={() => scrollToId("reserve")}><MapPin /><span><b>Visit us</b><small>Find your next bite</small></span><ArrowRight /></button>
         </div>
         <div className="visit-art"><img src={heroImage} alt="OIshiinori sushi platter" /><div className="art-ring">おいしい<br />OISHII NORI<br />おいしい</div></div>
       </section>
 
+      <section id="reserve" className="reserve-section section-pad">
+        <div className="reserve-copy">
+          <p className="eyebrow">YOUR TABLE IS WAITING</p>
+          <h2>Reserve<br /><span>a table.</span></h2>
+          <p>Make room for good food, cold drinks, and the people you want around. We’ll save you a seat.</p>
+          <div className="reserve-note"><span>ご予約</span><small>Reservations are held for 15 minutes.</small></div>
+        </div>
+        <form className="reserve-form" onSubmit={handleReservation}>
+          <div className="reserve-form-row"><label>Date<input required type="date" name="date" /></label><label>Time<select required name="time" defaultValue=""><option value="" disabled>Select time</option><option>11:30 AM</option><option>1:00 PM</option><option>5:30 PM</option><option>7:00 PM</option><option>8:30 PM</option></select></label></div>
+          <label>Party size<select required name="party" defaultValue=""><option value="" disabled>Choose a size</option><option>1 guest</option><option>2 guests</option><option>3–4 guests</option><option>5–8 guests</option><option>9+ guests</option></select></label>
+          <label>Name<input required name="guest" placeholder="Your name" /></label>
+          <label>Phone or email<input required name="contact" placeholder="How can we reach you?" /></label>
+          <button className="dark-button submit-button" type="submit">{reservationSent ? "Request received" : "Reserve now"} <ArrowRight size={13} /></button>
+          {reservationSent && <p className="form-success" role="status">Arigato — your reservation request is on its way to the kitchen.</p>}
+        </form>
+      </section>
+
       <section id="contact" className="contact-section section-pad">
         <div className="contact-deco deco-left" /><div className="contact-deco deco-right" />
-        <div className="contact-title"><p className="eyebrow">WE'RE HERE FOR YOU</p><h2>Contact<br /><span>us.</span></h2><p className="contact-kanji">寿司<br />言語</p></div>
+        <div className="contact-title"><p className="eyebrow">WE'RE HERE FOR YOU</p><h2>Contact<br /><span>us.</span></h2><p className="contact-kanji">寿司<br />言語</p><span className="contact-stamp">おいしい</span></div>
         <form className="contact-form" onSubmit={handleContact}>
           <label>Name<input required name="name" placeholder="Your name" /></label>
           <label>Email<input required type="email" name="email" placeholder="you@example.com" /></label>
@@ -156,7 +179,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-brand"><img src={logo} alt="OIshiinori logo" /><p>Good food, good mood.<br />See you at the table.</p></div>
         <div className="footer-links"><a href="https://instagram.com" target="_blank" rel="noreferrer"><Instagram size={14} /> Instagram</a><a href="tel:+630000000000"><Phone size={14} /> Call the kitchen</a></div>
-        <div className="newsletter"><p>SUBSCRIBE TO OISHII NEWS</p><form onSubmit={(e) => { e.preventDefault(); setEmail(""); }}><input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="your email" aria-label="Email for newsletter" /><button aria-label="Subscribe"><ArrowRight size={15} /></button></form><small>New rolls, cafe drops, and kitchen notes.</small></div>
+        <div className="newsletter"><p>SUBSCRIBE TO OISHII NEWS</p><form onSubmit={(e) => { e.preventDefault(); setEmail(""); }}><input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="your email" aria-label="Email for newsletter" /><button aria-label="Subscribe"><ArrowRight size={15} /></button></form><small>Fresh dispatches from the kitchen.</small></div>
         <div className="footer-bottom"><span>© 2024 OIshiinori</span><span>寿司の専門家</span><span>Made with appetite.</span></div>
       </footer>
     </main>
