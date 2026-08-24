@@ -42,25 +42,26 @@
 .mobile-features { display: none; }
 @media (max-width: 760px) {
   .site-header { padding: 0; }
-  .nav-shell { position: relative; width: calc(100% - 32px); height: 64px; margin: 14px auto 0; border-radius: 34px; background: var(--ink); box-shadow: 0 6px 0 rgba(35,35,33,.12); padding: 0 15px; }
+  .nav-shell { position: relative; width: calc(100% - 40px); height: 58px; margin: 16px auto 0; border-radius: 31px; background: var(--ink); box-shadow: 0 5px 0 rgba(35,35,33,.12); padding: 0 12px; }
   .mobile-toggle { color: var(--paper); }
-  .nav-logo { width: 76px; height: 76px; margin-top: 0; border: 5px solid var(--paper); border-radius: 50%; }
+  .nav-logo { width: 66px; height: 66px; margin-top: 0; border: 4px solid var(--paper); border-radius: 50%; }
   .nav-logo img { border: 0; }
-  .nav-cta { display: inline-flex !important; background: var(--red); color: var(--paper) !important; border: 1px solid var(--paper) !important; padding: 11px 16px !important; border-radius: 22px; font-weight: 700; }
+  .nav-cta { display: inline-flex !important; background: var(--red); color: var(--paper) !important; border: 1px solid var(--paper) !important; padding: 10px 14px !important; border-radius: 22px; font-size: 9px; font-weight: 700; }
   .nav-links.is-open { top: 84px; left: 0; right: 0; border-radius: 0; border-top: 1px solid var(--ink); }
-  .hero { padding: 35px 24px 28px; gap: 16px; min-height: 640px; }
-  .hero-copy { padding-left: 0; }
-  .hero h1 { font-size: clamp(88px, 25vw, 126px); line-height: .78; }
-  .hero-japanese { font-size: 19px; margin-top: 17px; }
-  .hero-description { font-size: 13px; line-height: 1.45; }
-  .hero-actions { display: grid; gap: 8px; width: min(100%, 270px); }
+  .hero { position: relative; display: block; padding: 48px 24px 30px; min-height: 610px; overflow: hidden; }
+  .hero-copy { position: relative; z-index: 2; width: 58%; padding-left: 0; }
+  .hero h1 { font-size: clamp(78px, 24vw, 108px); line-height: .78; }
+  .hero-japanese { font-size: 18px; margin-top: 16px; white-space: nowrap; }
+  .hero-description { font-size: 12px; line-height: 1.45; }
+  .hero-actions { display: grid; gap: 8px; width: min(100%, 218px); }
   .hero-actions .dark-button, .hero-actions .text-button { min-height: 44px; justify-content: center; width: 100%; }
   .hero-actions .mobile-primary { background: var(--red); color: var(--paper); border: 1px solid var(--red); }
   .hero-actions .mobile-secondary { border: 1px solid var(--ink); color: var(--ink); background: transparent; padding: 12px 17px; text-transform: uppercase; font-size: 10px; letter-spacing: .14em; }
-  .hero-visual { margin-top: -5px; min-height: 315px; }
-  .hero-visual img { width: 92vw; max-width: 390px; }
-  .hero-red-disc { width: 84vw; height: 84vw; max-width: 355px; max-height: 355px; right: 1%; }
+  .hero-visual { position: absolute; top: 155px; right: -55px; width: 255px; height: 255px; margin: 0; min-height: 0; z-index: 1; }
+  .hero-visual img { position: relative; z-index: 2; width: 100%; max-width: none; }
+  .hero-red-disc { width: 250px; height: 250px; max-width: none; max-height: none; right: 0; top: 0; }
   .hero-note { display: none; }
+  .hero-visual:after { content: "寿司"; position: absolute; z-index: 3; right: 55px; bottom: 8px; color: var(--paper); font-family: "Noto Serif JP"; font-size: 15px; writing-mode: vertical-rl; }
   .mobile-features { display: grid; grid-template-columns: repeat(4, 1fr); background: var(--paper-2); border-top: 1px solid rgba(35,35,33,.18); border-bottom: 1px solid rgba(35,35,33,.18); padding: 16px 10px 14px; }
   .mobile-features > div { min-width: 0; padding: 0 7px; display: grid; justify-items: center; text-align: center; gap: 3px; border-right: 1px solid rgba(35,35,33,.2); }
   .mobile-features > div:last-child { border-right: 0; }

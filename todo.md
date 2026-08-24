@@ -33,6 +33,10 @@
 - [x] Rebalance the hero spacing so the main OIshiinori title and sushi image lead clearly.
 - [x] Verify desktop and mobile hierarchy, then save the corrected checkpoint.
 
+- [x] Reduce the mobile navigation medallion and restore balanced pill proportions.
+- [x] Recompose the mobile hero so text, CTAs, and sushi imagery share the first screen.
+- [x] Verify mobile balance and desktop preservation, then save a corrected checkpoint.
+
 ## Verification notes
 
 Desktop full-page capture shows the intended long-scroll poster composition, readable contrast, and coherent section transitions. Mobile full-page capture shows the two-column menu compressing cleanly, the hero and contact sections stacking, and the footer remaining legible. Generated food images are rendering through the reserved webdev asset URLs.
@@ -62,3 +66,5 @@ The correct rollback removed only the ramen opening hero. The OIshiinori cream-p
 Mobile redesign evaluation: the phone layout now has a charcoal pill navigation with a centered logo medallion, stronger Reserve/View Menu hierarchy, a four-column feature strip, tighter signature menu cards, a dark experience section, and a light paper reservation form with a stamped label. Desktop capture confirms the existing editorial layout remains intact.
 
 Hero cleanup evaluation: desktop now starts directly with the Exclusive Rolls eyebrow and primary OIshiinori wordmark beside the sushi visual; the oversized duplicate hero logo is gone. Mobile keeps only the centered navigation medallion, the hero title, the reserve/menu actions, and the sushi crop, producing a clearer first-screen hierarchy. The style review returned “ship it.”
+
+Mobile hero balance evaluation: the compact pill nav no longer overwhelms the top edge, the copy and actions stay left, and the sushi visual now enters the first screen from the right instead of dropping below the fold. Desktop capture remains unchanged and preserves the original editorial split hero. The latest visual review found the composition strong and on-style.
