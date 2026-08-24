@@ -29,6 +29,10 @@
 - [x] Preserve desktop layout and existing map, hours, menu, and form interactions.
 - [x] Evaluate mobile and desktop screenshots, then save an updated checkpoint.
 
+- [x] Remove the duplicated hero logo from the mobile-reference redesign.
+- [x] Rebalance the hero spacing so the main OIshiinori title and sushi image lead clearly.
+- [x] Verify desktop and mobile hierarchy, then save the corrected checkpoint.
+
 ## Verification notes
 
 Desktop full-page capture shows the intended long-scroll poster composition, readable contrast, and coherent section transitions. Mobile full-page capture shows the two-column menu compressing cleanly, the hero and contact sections stacking, and the footer remaining legible. Generated food images are rendering through the reserved webdev asset URLs.
@@ -56,3 +60,5 @@ Map-open interaction check: clicking Visit Us changes the action to Hide Map and
 The correct rollback removed only the ramen opening hero. The OIshiinori cream-paper hero is restored; the MapView, daily hours, reservation section, and reservation contrast fix remain. Type-check passes.
 
 Mobile redesign evaluation: the phone layout now has a charcoal pill navigation with a centered logo medallion, stronger Reserve/View Menu hierarchy, a four-column feature strip, tighter signature menu cards, a dark experience section, and a light paper reservation form with a stamped label. Desktop capture confirms the existing editorial layout remains intact.
+
+Hero cleanup evaluation: desktop now starts directly with the Exclusive Rolls eyebrow and primary OIshiinori wordmark beside the sushi visual; the oversized duplicate hero logo is gone. Mobile keeps only the centered navigation medallion, the hero title, the reserve/menu actions, and the sushi crop, producing a clearer first-screen hierarchy. The style review returned “ship it.”

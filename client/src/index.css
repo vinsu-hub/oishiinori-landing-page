@@ -50,9 +50,6 @@
   .nav-links.is-open { top: 84px; left: 0; right: 0; border-radius: 0; border-top: 1px solid var(--ink); }
   .hero { padding: 35px 24px 28px; gap: 16px; min-height: 640px; }
   .hero-copy { padding-left: 0; }
-  .mobile-hero-mark { display: flex; align-items: center; gap: 9px; margin-bottom: 22px; color: var(--ink); font-family: "Bebas Neue"; text-transform: uppercase; font-size: 17px; line-height: .82; letter-spacing: .05em; }
-  .mobile-hero-mark img { width: 34px; height: 34px; object-fit: cover; border-radius: 50%; border: 2px solid var(--red); }
-  .mobile-hero-mark small { font-family: "DM Sans"; font-size: 6px; letter-spacing: .16em; }
   .hero h1 { font-size: clamp(88px, 25vw, 126px); line-height: .78; }
   .hero-japanese { font-size: 19px; margin-top: 17px; }
   .hero-description { font-size: 13px; line-height: 1.45; }

@@ -74,7 +74,6 @@ export default function Home() {
 
       <section id="home" className="hero section-pad">
         <div className="hero-copy">
-          <div className="mobile-hero-mark"><img src={logo} alt="" /><span>OIshiinori<br /><small>JAPANESE SUSHI</small></span></div>
           <p className="eyebrow">EXCLUSIVE ROLLS<br /><span>FOR YOUR OISHII DAY</span></p>
           <h1>OIshii<br /><em>Nori</em></h1>
           <p className="hero-japanese">おいしいのり</p>
