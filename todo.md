@@ -24,6 +24,11 @@
 - [x] Add clean scroll, reveal, hover, and reduced-motion-safe animation.
 - [x] Evaluate desktop and mobile UI states and save an updated checkpoint.
 
+- [x] Add the supplied ramen artwork as the opening hero visual.
+- [x] Build scroll-driven parallax, zoom, label reveal, and transition behavior.
+- [x] Evaluate the opening hero on desktop and mobile, respecting reduced motion.
+- [x] Save and deliver the animated hero checkpoint.
+
 ## Verification notes
 
 Desktop full-page capture shows the intended long-scroll poster composition, readable contrast, and coherent section transitions. Mobile full-page capture shows the two-column menu compressing cleanly, the hero and contact sections stacking, and the footer remaining legible. Generated food images are rendering through the reserved webdev asset URLs.
@@ -41,3 +46,7 @@ Dual-viewport evaluation: desktop preserves the editorial poster rhythm while ad
 Map interaction diagnostic: the live preview exposes the Visit Us button and the confirmed daily hours/address. The first browser click did not visibly update the button state, so the DOM click path was tested directly; a follow-up render check is needed before final delivery.
 
 Map-open interaction check: clicking Visit Us changes the action to Hide Map and renders the built-in Google Maps view centered on Oishii Nori at the supplied Laguna coordinates, with an Open in Maps link. Desktop and mobile closed-state captures plus the open desktop map state were reviewed for hierarchy, spacing, and readability.
+
+Opening-hero evaluation: desktop shows the ramen artwork, OIshiinori lockup, ingredient guides, CTA, and scroll cue in a clear first-frame composition. Mobile preserves the central bowl and brand lockup, but the cover crop trims parts of the baked-in side labels and bottom title; the artwork should use a contained crop to preserve the supplied composition on narrow screens.
+
+Final opening-hero evaluation: desktop and mobile now preserve the complete ramen artwork with a contained crop, keep the OIshiinori logo lockup visible, and maintain readable CTA/scroll-cue contrast. The scroll-driven variables compile cleanly, and the mobile composition keeps the bowl, title, and nutrition callout inside the viewport.
