@@ -37,6 +37,9 @@
 - [x] Recompose the mobile hero so text, CTAs, and sushi imagery share the first screen.
 - [x] Verify mobile balance and desktop preservation, then save a corrected checkpoint.
 
+- [x] Align the View Menu label and arrow into a deliberate two-column button grid.
+- [x] Verify the arrow alignment on mobile and desktop, then save a corrected checkpoint.
+
 ## Verification notes
 
 Desktop full-page capture shows the intended long-scroll poster composition, readable contrast, and coherent section transitions. Mobile full-page capture shows the two-column menu compressing cleanly, the hero and contact sections stacking, and the footer remaining legible. Generated food images are rendering through the reserved webdev asset URLs.
@@ -68,3 +71,5 @@ Mobile redesign evaluation: the phone layout now has a charcoal pill navigation 
 Hero cleanup evaluation: desktop now starts directly with the Exclusive Rolls eyebrow and primary OIshiinori wordmark beside the sushi visual; the oversized duplicate hero logo is gone. Mobile keeps only the centered navigation medallion, the hero title, the reserve/menu actions, and the sushi crop, producing a clearer first-screen hierarchy. The style review returned “ship it.”
 
 Mobile hero balance evaluation: the compact pill nav no longer overwhelms the top edge, the copy and actions stay left, and the sushi visual now enters the first screen from the right instead of dropping below the fold. Desktop capture remains unchanged and preserves the original editorial split hero. The latest visual review found the composition strong and on-style.
+
+View Menu arrow evaluation: mobile now uses a dedicated two-column button grid with the label visually centered and the arrow locked to the right edge; desktop keeps the same button behavior without disturbing the existing hero composition. Build and type-check pass, and the style review returned the existing visual system as ship-ready.

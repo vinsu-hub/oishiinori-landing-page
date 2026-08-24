@@ -56,7 +56,7 @@
   .hero-actions { display: grid; gap: 8px; width: min(100%, 218px); }
   .hero-actions .dark-button, .hero-actions .text-button { min-height: 44px; justify-content: center; width: 100%; }
   .hero-actions .mobile-primary { background: var(--red); color: var(--paper); border: 1px solid var(--red); }
-  .hero-actions .mobile-secondary { border: 1px solid var(--ink); color: var(--ink); background: transparent; padding: 12px 17px; text-transform: uppercase; font-size: 10px; letter-spacing: .14em; }
+  .hero-actions .mobile-secondary { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 12px; border: 1px solid var(--ink); color: var(--ink); background: transparent; padding: 12px 17px; text-transform: uppercase; font-size: 10px; letter-spacing: .14em; text-align: left; } .hero-actions .mobile-secondary span { justify-self: center; } .hero-actions .mobile-secondary svg { justify-self: end; }
   .hero-visual { position: absolute; top: 155px; right: -55px; width: 255px; height: 255px; margin: 0; min-height: 0; z-index: 1; }
   .hero-visual img { position: relative; z-index: 2; width: 100%; max-width: none; }
   .hero-red-disc { width: 250px; height: 250px; max-width: none; max-height: none; right: 0; top: 0; }

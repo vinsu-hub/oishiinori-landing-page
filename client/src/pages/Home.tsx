@@ -80,7 +80,7 @@ export default function Home() {
           <p className="hero-description">Rolls with a little more feeling.<br />Fresh ingredients, bright ideas,<br />and a table waiting for you.</p>
           <div className="hero-actions">
             <button className="dark-button mobile-primary" onClick={() => scrollToId("reserve")}>Reserve a table <ArrowRight size={13} /></button>
-            <button className="text-button mobile-secondary" onClick={() => scrollToId("menu")}>View menu <ArrowRight size={13} /></button>
+            <button className="text-button mobile-secondary" onClick={() => scrollToId("menu")}><span>View menu</span><ArrowRight size={13} /></button>
           </div>
         </div>
         <div className="hero-visual">
