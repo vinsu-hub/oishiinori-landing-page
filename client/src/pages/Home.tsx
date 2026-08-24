@@ -1,6 +1,7 @@
 /* OIshiinori style reminder: reference-faithful Japanese editorial menu, warm ivory paper, charcoal ink, OIshiinori Vermilion, asymmetric poster rhythm. */
 import { useMemo, useState } from "react";
 import { ArrowRight, ChevronDown, Clock3, Instagram, MapPin, Menu as MenuIcon, Phone, Send, X } from "lucide-react";
+import { MapView } from "@/components/Map";
 
 const logo = "/manus-storage/oishiinori-logo_730916dd.jpg";
 const heroImage = "/manus-storage/oishiinori-hero_97067229.png";
@@ -9,6 +10,7 @@ const drinksImage = "/manus-storage/oishiinori-drinks_913852ae.png";
 const snacksImage = "/manus-storage/oishiinori-snacks_9a060d6c.png";
 
 const categories = ["All", "Sushi", "Tako", "Ramen", "Cafe"];
+const shopLocation = { lat: 14.278476, lng: 121.4158777 };
 
 const menuItems = [
   { name: "Salmon Maki", category: "Sushi", description: "Fresh salmon, seasoned rice, nori", price: "₱180", image: heroImage, crop: "center", tag: "01" },
@@ -28,6 +30,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
   const [reservationSent, setReservationSent] = useState(false);
+  const [mapOpen, setMapOpen] = useState(false);
   const [email, setEmail] = useState("");
 
   const filteredItems = useMemo(
@@ -143,9 +146,11 @@ export default function Home() {
       <section className="visit-section section-pad">
         <div className="visit-actions">
           <button className="visit-pill" onClick={() => scrollToId("reserve")}><Clock3 /><span><b>Timing</b><small>Check our hours</small></span><ArrowRight /></button>
-          <button className="visit-pill" onClick={() => scrollToId("reserve")}><MapPin /><span><b>Visit us</b><small>Find your next bite</small></span><ArrowRight /></button>
+          <button className={`visit-pill ${mapOpen ? "is-open" : ""}`} onClick={() => setMapOpen((open) => !open)} aria-expanded={mapOpen}><MapPin /><span><b>{mapOpen ? "Hide map" : "Visit us"}</b><small>{mapOpen ? "Close location view" : "Open location view"}</small></span>{mapOpen ? <X /> : <ArrowRight />}</button>
+          <div className="hours-card"><div><span className="hours-icon">◷</span><p><b>OPEN DAILY</b><small>11:00 AM — 10:00 PM</small></p></div><p className="hours-address">Pedro Guevara Ave<br />Santa Cruz, Laguna 4009</p></div>
         </div>
         <div className="visit-art"><img src={heroImage} alt="OIshiinori sushi platter" /><div className="art-ring">おいしい<br />OISHII NORI<br />おいしい</div></div>
+        {mapOpen && <div className="map-panel"><div className="map-panel-head"><div><p className="eyebrow">FIND THE KITCHEN</p><h3>Oishii Nori<br /><span>Santa Cruz.</span></h3></div><a href="https://maps.app.goo.gl/9oACBZo6tUdzyabK7" target="_blank" rel="noreferrer">Open in Maps <ArrowRight size={13} /></a></div><MapView className="oishiinori-map" initialCenter={shopLocation} initialZoom={17} onMapReady={(map) => { new google.maps.marker.AdvancedMarkerElement({ map, position: shopLocation, title: "Oishii Nori" }); }} /></div>}
       </section>
 
       <section id="reserve" className="reserve-section section-pad">
